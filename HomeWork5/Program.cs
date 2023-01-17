@@ -9,24 +9,6 @@
 
 // 4. То есть если массив три на четыре, то надо выполнить за 6 итераций. И далее в конце опять вывести на экран как таблицу.
 
-var m = 0;
-var n = 0;
-do
-{
-    Console.Write("Введите значения m и n ( m*n должно быть четным числом) в строку через пробел и нажмите ввод ");
-    string[] num = Console.ReadLine().Split(' ');
-    m = Convert.ToInt32(num[0]);
-    n = Convert.ToInt32(num[1]);
-}
-while ((m * n) % 2 != 0);
-
-
-int[,] array = new int[m, n];
-FillArray(array);
-PrintArray(array);
-MixArray(array, m, n);
-
-
 void FillArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -61,4 +43,19 @@ void MixArray(int[,] array, int m, int n)
     PrintArray(array);
 }
 
+var m = 0;
+var n = 0;
+do
+{
+    Console.Write("Введите значения m и n ( m*n должно быть четным числом) в строку через пробел и нажмите ввод ");
+    string[] num = Console.ReadLine().Split(' ');
+    m = Convert.ToInt32(num[0]);
+    n = Convert.ToInt32(num[1]);
+}
+while ((m * n) % 2 != 0);
 
+
+int[,] array = new int[m, n];
+FillArray(array);
+PrintArray(array);
+MixArray(array, m, n);
